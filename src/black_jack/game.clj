@@ -27,6 +27,32 @@
      :cards       cards
      :points      points}))
 
-(card/print-player (player "Milena"))
-(card/print-player (player "Dealer"))
+(defn more-cards [player]
+  (let [card (new-card)
+        cards (conj (:cards player) card)
+        new-player (update player :cards conj card)
+        points (points-cards cards)]
+    (assoc new-player :points points)))
+
+(defn game [player]
+  (println (:player-name player) "deseja mais uma carta?")
+  (if (= (read-line) "sim")
+    (let [player-with-more-cards (more-cards player)]
+      (card/print-player player-with-more-cards)
+      (game player-with-more-cards))
+    player))
+
+(def player-1 (player "Milena"))
+(card/print-player player-1)
+
+(def dealer (player "Dealer"))
+(card/print-player dealer)
+
+(game player-1)
+(game dealer)
+
+
+
+;(card/print-player (player "Milena"))
+;(card/print-player (player "Dealer"))
 
