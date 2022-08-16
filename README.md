@@ -1,10 +1,8 @@
 # black-jack
 
-A Clojure library designed to ... well, that part is up to you.
+This is a simple program made in clojure to play blackjack
 
-## Usage
-
-FIXME
+![Screen-Recording-2022-08-16-at-20 30 56](https://user-images.githubusercontent.com/98053054/185003815-6db450c1-2cb4-427e-b31c-c37a90f9f57d.gif)
 
 ## License
 
